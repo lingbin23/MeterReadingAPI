@@ -1,3 +1,8 @@
-MeterReadingAPI - the main API project
-MeterReadingAPI.Test - the Uunit test project
+### the main API project
+MeterReadingAPI  
+
+### - the Unit test project
+MeterReadingAPI.Test 
+
+### Database
 MeterReading.bak - MS SQL database back up file
