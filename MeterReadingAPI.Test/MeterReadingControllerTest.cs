@@ -1,8 +1,8 @@
-using NUnit.Framework;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Testing;
 using MeterReadingAPI;
+using Microsoft.Extensions.DependencyInjection;
+using MeterReadingAPI.Data;
+using Microsoft.EntityFrameworkCore;
 //using Microsoft.VisualStudio.TestPlatform.TestHost;
 
 namespace MeterReadingAPI.Test
@@ -42,6 +42,15 @@ namespace MeterReadingAPI.Test
 
             // Assert
             Assert.That(response.StatusCode, Is.EqualTo(System.Net.HttpStatusCode.OK));
+
+            // Verify data is saved
+            using (var scope = _appFactory.Services.CreateScope())
+            {
+                var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+                var meterReadingCount = await context.MeterReadings.CountAsync();
+                Assert.Greater(meterReadingCount, 0);
+            }
         }
+
     }
 }
