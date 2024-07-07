@@ -1,0 +1,18 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Upload Meter Reading";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form id="uploadForm" method="post" enctype="multipart/form-data" action="/meter-reading-uploads">
+    @Html.AntiForgeryToken() <!-- Include anti-forgery token -->
+    <div class="form-group">
+        <label for="file">Select CSV file to upload</label>
+        <input type="file" name="file" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
+<div id="resultMessage" class="mt-3"></div>
+
