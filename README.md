@@ -4,5 +4,5 @@ MeterReadingAPI
 ### The Unit test project
 MeterReadingAPI.Test 
 
-### Database
-MeterReading.bak - MS SQL database back up file
+### MS SQL database back up file
+MeterReading.bak 
