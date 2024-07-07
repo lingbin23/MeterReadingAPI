@@ -1,7 +1,7 @@
-### the main API project
+### The main API project
 MeterReadingAPI  
 
-### - the Unit test project
+### The Unit test project
 MeterReadingAPI.Test 
 
 ### Database
